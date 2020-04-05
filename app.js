@@ -41,8 +41,8 @@ app.use(function (err, req, res, next) {
   err.message = [msg];
 
   if (err.errors) {
-    res.status = 422;
-    err.status = res.status;
+    res.status(err.status || 422);
+    err.status ? err.status = err.status : err.status = 422;
     const messageError = err.array().map(item => {
       return item.msg;
     });
