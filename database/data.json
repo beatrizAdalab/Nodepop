@@ -1,0 +1,41 @@
+{
+  "items": [
+    {
+      "name": "guitar classic yamaha",
+      "buy": true,
+      "price": 110,
+      "photo": "/images/items/guitarYamaha.jpg",
+      "tags": [
+        "lifestyle"
+      ]
+    },
+    {
+      "name": "Furby pink",
+      "buy": false,
+      "price": 55,
+      "photo": "/images/items/Furby.jpg",
+      "tags": [
+        "lifestyle"
+      ]
+    },
+    {
+      "name": "Xiaomi Mi Electric Scooter M365",
+      "buy": true,
+      "price": 240,
+      "photo": "/images/items/MiElectric.png",
+      "tags": [
+        "lifestyle",
+        "motor"
+      ]
+    },
+    {
+      "name": "ipad pro 11",
+      "buy": true,
+      "price": 310,
+      "photo": "/images/items/ipad.jpg",
+      "tags": [
+        "lifestyle"
+      ]
+    }
+  ]
+}

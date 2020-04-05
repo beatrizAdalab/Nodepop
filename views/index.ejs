@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body class="p-0">
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4 font-weight-bold"><%= title %></h1>
+      <p class="lead">Welcome to this page where you can test the Nodepop API.</br>
+        Change the parameters in the url and get new results.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row m-0 mb-3">
+      <div class="col-sm bg-dark text-white p-3 text-center">
+        <h2> What is this? </h2>
+        <p>This is a website where you can test the Nodepop API.
+          The database has been created with Mongodb and Mongoose.
+          You can search for second-hand items and use different filters.
+        </p>
+      </div>
+      <div class="col-sm bg-warning p-3 text-center">
+        <h2> How can I use it? </h2>
+        <p>At the start of the website, the complete list of articles is obtained.
+          You can manage the filters and the sorting in the URL.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm">
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                  aria-expanded="true" aria-controls="collapseOne">
+                  LIST ALL ITEMS : by default they are arranged alphabetically by name.
+                </button>
+              </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                <samp>
+                  http://localhost:3000
+                </samp>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                  aria-expanded="false" aria-controls="collapseTwo">
+                  SEARCH BY NAME: name must be alphanumeric
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+                <samp>
+                  http://localhost:3000?name=xxxx
+                </samp>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingSix">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix"
+                  aria-expanded="false" aria-controls="collapseSix">
+                  FILTER BY TAG: Must be one of the following strings: 'work', 'lifestyle', 'motor' or 'mobile'.
+                </button>
+              </h2>
+            </div>
+            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+              <div class="card-body">
+                <samp>
+                  http://localhost:3000?tag=lifestyle <span class="text-muted">//Search all items whit tag
+                    lifestyle.</span>
+                </samp>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+                  aria-expanded="false" aria-controls="collapseThree">
+                  SORT : by name or price.
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body">
+                <samp>
+                  http://localhost:3000?sort=name <span class="text-muted">//sort all items by name</span>
+                </samp> <br />
+                <samp>
+                  http://localhost:3000?sort=price <span class="text-muted">//sort all items by price</span>
+                </samp>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingFour">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour"
+                  aria-expanded="false" aria-controls="collapseFour">
+                  LIST BY PRICE: price must be a number. There is a pattern for maximum and minimum price.
+                </button>
+              </h2>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+              <div class="card-body">
+                <samp>
+                  http://localhost:3000?price=50 <span class="text-muted">//returns items whose price is 50</span>
+                </samp> <br />
+                <samp>http://localhost:3000?price=50- <span class="text-muted">//returns search for items whose price is
+                    equal to or greater than 50 </span>
+                </samp> <br />
+                <samp>http://localhost:3000?price=-100 <span class="text-muted">//returns search for items whose price
+                    is equal to or less than 100 </span>
+                </samp><br />
+                <samp>http://localhost:3000?price=50-100 <span class="text-muted">//returns items between 50 and 100
+                    (both included)</span>
+                </samp>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingFive">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive"
+                  aria-expanded="false" aria-controls="collapseFive">
+                  PAGINATION
+                </button>
+              </h2>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+              <div class="card-body">
+                <samp>
+                  http://localhost:3000?limit=5 <span class="text-muted">//limit per page 5 items, must be a number
+                    greater than zero. Default = 5</span>
+                </samp> <br />
+                <samp>
+                  http://localhost:3000?page=2 <span class="text-muted">//page must be a number greater than zero.
+                    Default = 1</span>
+                </samp>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="container pt-5">
+    <h2>Items</h2>
+    <% if(data.count === 0) { %>
+    <p><%= data.results %> </p>
+    <% } else { %>
+    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
+      <% data.results.forEach(item => { %>
+      <div class="col mb-4">
+        <div class="card shadow rounded">
+          <img src="<%= item.photo %>" class="card-img-top " alt="<%= item.name %>">
+          <div class="card-img-overlay">
+            <span class="badge badge-warning p-2"><%= item.price %> €</span>
+          </div>
+          <div class="card-body bg-light">
+            <h3 class="card-title h4"><%= item.name %></h3>
+
+            <% item.tags.forEach(tag => { %>
+            <span class="badge badge-secondary"><%= tag %></span>
+            <% }) %>
+
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+    <% } %>
+  </div>
+
+</body>
+
+</html>

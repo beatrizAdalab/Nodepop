@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Nodepop</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body class="p-0 pb-5">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4 font-weight-bold">Nodepop</h1>
+      <p class="lead">Welcome to this page where you can test the Nodepop API.</br>
+        Change the parameters in the url and get new results.
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1 class="h2"> Errors </h1>
+
+    <% error.message.forEach(msg => { %>
+    <h3 class="h5"><%= msg %></h3>
+    <% }) %>
+
+    <h2 class="h5 mt-3 text-danger"> Status: <%= error.status %></h2>
+    <pre><%= error.stack %></pre>
+    <div class="d-flex justify-content-center">
+      <a href="/" class="btn btn-secondary mt-3" role="button" aria-pressed="true">back</a>
+    </div>
+  </div>
+</body>
+
+</html>
