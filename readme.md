@@ -28,7 +28,7 @@ mongod
 
 ### Clone
 
-Clone this repo to your local machine using `https://github.com/xxxxxxxx`
+Clone this repo to your local machine using `https://github.com/beatrizAdalab/Nodepop.git`
 
 Now install npm 
 
